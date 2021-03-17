@@ -1,0 +1,13 @@
+menu bar
+   menu
+     menu item
+     checkbox menuitem
+     separator
+     raddioButtonMenuItem
+     menu
+ 
+
+j menu
+j menuitem 
+j menu bar
+jtool bar
