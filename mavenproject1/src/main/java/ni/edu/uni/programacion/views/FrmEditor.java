@@ -5,6 +5,10 @@
  */
 package ni.edu.uni.programacion.views;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import ni.edu.uni.programacion.views.panels.PnlEditor;
 
@@ -84,6 +88,11 @@ public class FrmEditor extends javax.swing.JFrame {
 
         mniSaveAs.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         mniSaveAs.setText("Save As");
+        mniSaveAs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniSaveAsActionPerformed(evt);
+            }
+        });
         mnFile.add(mniSaveAs);
         mnFile.add(jSeparator1);
 
@@ -102,15 +111,32 @@ public class FrmEditor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mniOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniOpenActionPerformed
-        // TODO add your handling code here:
+ 
+        
+        JFileChooser fileChooser =  new JFileChooser();
+        
+        int option = fileChooser.showOpenDialog(this);
+        if(option == JFileChooser.APPROVE_OPTION){
+            JOptionPane.showMessageDialog(null, fileChooser.getSelectedFile().getName());
+        }        
+        
+         PnlEditor pnlEditor= new PnlEditor();
+       
+        
+        tbpContent.addTab("Editor "+counTab++,pnlEditor);
+   
     }//GEN-LAST:event_mniOpenActionPerformed
+
+    
+
 
     private void mniNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniNewActionPerformed
         
         PnlEditor pnlEditor= new PnlEditor();
+        
+        
         tbpContent.addTab("Editor "+counTab++,pnlEditor);
-        
-        
+   
         
         
         
@@ -120,13 +146,52 @@ public class FrmEditor extends javax.swing.JFrame {
         if (tbpContent.getComponentCount()<=0) {
             return;
         }
-        int option= JOptionPane.showConfirmDialog(null,"","",JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE );
+        int option= JOptionPane.showConfirmDialog(null,"Are you sure to delete this tab?","Confirm Dialog",JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE );
          if (option==1) {
             return;
         }
         int index= tbpContent.getSelectedIndex();
          tbpContent.remove(index);
     }//GEN-LAST:event_btnCloseTabActionPerformed
+
+    private void mniSaveAsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSaveAsActionPerformed
+               
+           
+            PnlEditor pnlEditor= new PnlEditor();
+             try
+             {
+              String nombre="";
+              JFileChooser file=new JFileChooser();
+              file.showSaveDialog(this);
+              File guarda =file.getSelectedFile();
+
+              if(guarda !=null)
+              {
+              
+                FileWriter  save=new FileWriter(guarda+".txt");
+//                save.write(PnlEditor.);
+
+                save.close();
+                JOptionPane.showMessageDialog(null,
+                     "El archivo se a guardado Exitosamente",
+                         "Información",JOptionPane.INFORMATION_MESSAGE);
+                }
+             }
+              catch(IOException ex)
+              {
+               JOptionPane.showMessageDialog(null,
+                    "Su archivo no se ha guardado",
+                       "Advertencia",JOptionPane.WARNING_MESSAGE);
+              }
+//        JFileChooser fileChooser = new JFileChooser();
+//		fileChooser.setDialogTitle("Specify a file to save");
+//            
+//		int userSelection = fileChooser.showSaveDialog(this);
+//		if (userSelection == JFileChooser.APPROVE_OPTION) {
+//			File fileToSave = fileChooser.getSelectedFile();
+//			System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+//		}        // TODO add your handling code here:
+    }//GEN-LAST:event_mniSaveAsActionPerformed
 
     /**
      * @param args the command line arguments
