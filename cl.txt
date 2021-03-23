@@ -11,3 +11,5 @@ j menu
 j menuitem 
 j menu bar
 jtool bar
+https://scc.ustc.edu.cn/zlsc/sugon/intel/compiler_f/main_for/bldaps_for/common/bldaps_fileorg.htm
+https://ccsuniversity.ac.in/bridge-library/pdf/MCA-File-Structures-MCA-212.pdf
