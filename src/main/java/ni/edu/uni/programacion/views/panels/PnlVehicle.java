@@ -5,6 +5,16 @@
  */
 package ni.edu.uni.programacion.views.panels;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+
 /**
  *
  * @author yostin
@@ -27,15 +37,14 @@ public class PnlVehicle extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btng = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jSpinner2 = new javax.swing.JSpinner();
-        jSpinner3 = new javax.swing.JSpinner();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        spnMiles = new javax.swing.JSpinner();
+        fmtVin = new javax.swing.JFormattedTextField();
+        cmbEColor = new javax.swing.JComboBox<>();
+        cmbIColor = new javax.swing.JComboBox<>();
+        spnPrice = new javax.swing.JSpinner();
+        cmbStatus = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -48,48 +57,51 @@ public class PnlVehicle extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        rbtnAutomatic = new javax.swing.JRadioButton();
+        cmbModel = new javax.swing.JComboBox<>();
+        rbtnManual = new javax.swing.JRadioButton();
+        txtStock = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        cmbMake = new javax.swing.JComboBox<>();
+        txtStyle = new javax.swing.JTextField();
+        txtImagen = new javax.swing.JTextField();
+        txtEngine = new javax.swing.JTextField();
+        btnBrowse = new javax.swing.JButton();
+        cmbYear = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setLayout(null);
-        jPanel2.add(jSpinner1);
-        jSpinner1.setBounds(400, 30, 60, 20);
+        jPanel2.add(spnMiles);
+        spnMiles.setBounds(120, 310, 180, 20);
+        jPanel2.add(fmtVin);
+        fmtVin.setBounds(120, 190, 180, 20);
 
-        jFormattedTextField1.setText("jFormattedTextField1");
-        jPanel2.add(jFormattedTextField1);
-        jFormattedTextField1.setBounds(110, 190, 110, 20);
+        jPanel2.add(cmbEColor);
+        cmbEColor.setBounds(120, 230, 180, 20);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox3);
-        jComboBox3.setBounds(110, 230, 60, 20);
+        cmbIColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbIColorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmbIColor);
+        cmbIColor.setBounds(120, 270, 180, 20);
+        jPanel2.add(spnPrice);
+        spnPrice.setBounds(120, 340, 180, 20);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox4);
-        jComboBox4.setBounds(110, 270, 60, 20);
-        jPanel2.add(jSpinner2);
-        jSpinner2.setBounds(400, 60, 60, 20);
-        jPanel2.add(jSpinner3);
-        jSpinner3.setBounds(110, 150, 70, 20);
-
-        jToggleButton1.setText("jToggleButton1");
-        jPanel2.add(jToggleButton1);
-        jToggleButton1.setBounds(400, 140, 105, 23);
-
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox5);
-        jComboBox5.setBounds(400, 180, 57, 20);
+        cmbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(cmbStatus);
+        cmbStatus.setBounds(120, 490, 180, 20);
 
         jLabel1.setText("Marca");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(20, 30, 29, 14);
+        jLabel1.setBounds(20, 40, 29, 14);
 
         jLabel2.setText("Modelo");
         jPanel2.add(jLabel2);
@@ -117,66 +129,401 @@ public class PnlVehicle extends javax.swing.JPanel {
 
         jLabel8.setText("Millas Recorridas");
         jPanel2.add(jLabel8);
-        jLabel8.setBounds(260, 30, 80, 14);
+        jLabel8.setBounds(20, 310, 80, 14);
 
         jLabel9.setText("Precio");
         jPanel2.add(jLabel9);
-        jLabel9.setBounds(260, 70, 29, 14);
+        jLabel9.setBounds(20, 340, 29, 14);
 
         jLabel10.setText("Tipo de Transmicion");
         jPanel2.add(jLabel10);
-        jLabel10.setBounds(260, 100, 100, 20);
+        jLabel10.setBounds(10, 420, 100, 20);
 
         jLabel11.setText("Engine");
         jPanel2.add(jLabel11);
-        jLabel11.setBounds(260, 140, 32, 14);
+        jLabel11.setBounds(20, 380, 32, 14);
 
         jLabel12.setText("Estado");
         jPanel2.add(jLabel12);
-        jLabel12.setBounds(260, 180, 40, 14);
+        jLabel12.setBounds(20, 490, 40, 14);
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox6);
-        jComboBox6.setBounds(400, 100, 57, 20);
-        jPanel2.add(jTextField2);
-        jTextField2.setBounds(110, 70, 70, 20);
-        jPanel2.add(jTextField3);
-        jTextField3.setBounds(110, 30, 70, 20);
+        btng.add(rbtnAutomatic);
+        rbtnAutomatic.setText("automatic");
+        jPanel2.add(rbtnAutomatic);
+        rbtnAutomatic.setBounds(120, 420, 80, 23);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox1);
-        jComboBox1.setBounds(110, 110, 70, 20);
+        cmbModel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbModelActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmbModel);
+        cmbModel.setBounds(120, 70, 180, 20);
+
+        btng.add(rbtnManual);
+        rbtnManual.setText("Manual");
+        jPanel2.add(rbtnManual);
+        rbtnManual.setBounds(210, 420, 90, 23);
+
+        txtStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtStockActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtStock);
+        txtStock.setBounds(120, 10, 180, 20);
+
+        jLabel13.setText("Stock Number");
+        jPanel2.add(jLabel13);
+        jLabel13.setBounds(20, 10, 70, 14);
+
+        jPanel2.add(cmbMake);
+        cmbMake.setBounds(120, 40, 180, 20);
+        jPanel2.add(txtStyle);
+        txtStyle.setBounds(120, 110, 180, 20);
+        jPanel2.add(txtImagen);
+        txtImagen.setBounds(120, 460, 180, 20);
+        jPanel2.add(txtEngine);
+        txtEngine.setBounds(120, 370, 180, 20);
+
+        btnBrowse.setText("Browse");
+        jPanel2.add(btnBrowse);
+        btnBrowse.setBounds(330, 460, 73, 23);
+
+        jPanel2.add(cmbYear);
+        cmbYear.setBounds(120, 150, 180, 20);
+
+        jLabel14.setText("Imagen");
+        jPanel2.add(jLabel14);
+        jLabel14.setBounds(20, 460, 40, 14);
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
-        jButton1.setText("jButton1");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jPanel1.add(jButton1);
+        btnSave.setText("save");
+        btnSave.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(btnSave);
 
-        jButton2.setText("jButton2");
-        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jPanel1.add(jButton2);
+        btnCancel.setText("cancel");
+        btnCancel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(btnCancel);
 
         add(jPanel1, java.awt.BorderLayout.PAGE_END);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cmbModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbModelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbModelActionPerformed
+
+    private void cmbIColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbIColorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbIColorActionPerformed
+
+    private void txtStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStockActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtStockActionPerformed
+
+    public JButton getBtnBrowse() {
+        return btnBrowse;
+    }
+
+    public void setBtnBrowse(JButton btnBrowse) {
+        this.btnBrowse = btnBrowse;
+    }
+
+    public JButton getBtnCancel() {
+        return btnCancel;
+    }
+
+    public void setBtnCancel(JButton btnCancel) {
+        this.btnCancel = btnCancel;
+    }
+
+    public JButton getBtnSave() {
+        return btnSave;
+    }
+
+    public void setBtnSave(JButton btnSave) {
+        this.btnSave = btnSave;
+    }
+
+    public ButtonGroup getBtng() {
+        return btng;
+    }
+
+    public void setBtng(ButtonGroup btng) {
+        this.btng = btng;
+    }
+
+    public JComboBox<String> getCmbEColor() {
+        return cmbEColor;
+    }
+
+    public void setCmbEColor(JComboBox<String> cmbEColor) {
+        this.cmbEColor = cmbEColor;
+    }
+
+    public JComboBox<String> getCmbIColor() {
+        return cmbIColor;
+    }
+
+    public void setCmbIColor(JComboBox<String> cmbIColor) {
+        this.cmbIColor = cmbIColor;
+    }
+
+    public JComboBox<String> getCmbMake() {
+        return cmbMake;
+    }
+
+    public void setCmbMake(JComboBox<String> cmbMake) {
+        this.cmbMake = cmbMake;
+    }
+
+    public JComboBox<String> getCmbModel() {
+        return cmbModel;
+    }
+
+    public void setCmbModel(JComboBox<String> cmbModel) {
+        this.cmbModel = cmbModel;
+    }
+
+    public JComboBox<String> getCmbStatus() {
+        return cmbStatus;
+    }
+
+    public void setCmbStatus(JComboBox<String> cmbStatus) {
+        this.cmbStatus = cmbStatus;
+    }
+
+    public JComboBox<String> getCmbYear() {
+        return cmbYear;
+    }
+
+    public void setCmbYear(JComboBox<String> cmbYear) {
+        this.cmbYear = cmbYear;
+    }
+
+    public JFormattedTextField getFmtVin() {
+        return fmtVin;
+    }
+
+    public void setFmtVin(JFormattedTextField fmtVin) {
+        this.fmtVin = fmtVin;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JRadioButton getRbtnAutomatic() {
+        return rbtnAutomatic;
+    }
+
+    public void setRbtnAutomatic(JRadioButton rbtnAutomatic) {
+        this.rbtnAutomatic = rbtnAutomatic;
+    }
+
+    public JRadioButton getRbtnManual() {
+        return rbtnManual;
+    }
+
+    public void setRbtnManual(JRadioButton rbtnManual) {
+        this.rbtnManual = rbtnManual;
+    }
+
+    public JSpinner getSpnMiles() {
+        return spnMiles;
+    }
+
+    public void setSpnMiles(JSpinner spnMiles) {
+        this.spnMiles = spnMiles;
+    }
+
+    public JSpinner getSpnPrice() {
+        return spnPrice;
+    }
+
+    public void setSpnPrice(JSpinner spnPrice) {
+        this.spnPrice = spnPrice;
+    }
+
+    public JTextField getTxtEngine() {
+        return txtEngine;
+    }
+
+    public void setTxtEngine(JTextField txtEngine) {
+        this.txtEngine = txtEngine;
+    }
+
+    public JTextField getTxtImagen() {
+        return txtImagen;
+    }
+
+    public void setTxtImagen(JTextField txtImagen) {
+        this.txtImagen = txtImagen;
+    }
+
+    public JTextField getTxtStock() {
+        return txtStock;
+    }
+
+    public void setTxtStock(JTextField txtStock) {
+        this.txtStock = txtStock;
+    }
+
+    public JTextField getTxtStyle() {
+        return txtStyle;
+    }
+
+    public void setTxtStyle(JTextField txtStyle) {
+        this.txtStyle = txtStyle;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JButton btnBrowse;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnSave;
+    private javax.swing.ButtonGroup btng;
+    private javax.swing.JComboBox<String> cmbEColor;
+    private javax.swing.JComboBox<String> cmbIColor;
+    private javax.swing.JComboBox<String> cmbMake;
+    private javax.swing.JComboBox<String> cmbModel;
+    private javax.swing.JComboBox<String> cmbStatus;
+    private javax.swing.JComboBox<String> cmbYear;
+    private javax.swing.JFormattedTextField fmtVin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -187,11 +534,13 @@ public class PnlVehicle extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner jSpinner3;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JRadioButton rbtnAutomatic;
+    private javax.swing.JRadioButton rbtnManual;
+    private javax.swing.JSpinner spnMiles;
+    private javax.swing.JSpinner spnPrice;
+    private javax.swing.JTextField txtEngine;
+    private javax.swing.JTextField txtImagen;
+    private javax.swing.JTextField txtStock;
+    private javax.swing.JTextField txtStyle;
     // End of variables declaration//GEN-END:variables
 }

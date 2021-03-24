@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package ni.edu.uni.programacion.views;
+
 import ni.edu.uni.programacion.views.panels.PnlVehicle;
 /**
  *
  * @author yostin
  */
 public class VehicleFrame extends javax.swing.JFrame {
-
+private PnlVehicle pnlVehicle;
     /**
      * Creates new form VehicleFrame
      */
@@ -36,7 +37,7 @@ public class VehicleFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("New");
@@ -80,12 +81,12 @@ public class VehicleFrame extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-//          if (pnlCalculator == null) {
-//            pnlCalculator = new PnlCalculator();
-//            calculatorController = new CalculatorController(pnlCalculator);
-//        }
-//
-//        addComponent(pnlCalculator);
+          if (pnlVehicle == null) {
+            pnlVehicle = new PnlVehicle();
+            
+        }
+
+      
         
         
     }//GEN-LAST:event_jButton3ActionPerformed
