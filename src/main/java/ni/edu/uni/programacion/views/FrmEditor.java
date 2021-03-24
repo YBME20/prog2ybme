@@ -98,11 +98,6 @@ public class FrmEditor extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mniNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniNewActionPerformed
-        PnlEditor pnlEditor = new PnlEditor();
-        tbpContent.addTab("Editor "+countTab++ , pnlEditor);
-    }//GEN-LAST:event_mniNewActionPerformed
-
     private void btnCloseTabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseTabActionPerformed
         if(tbpContent.getComponentCount() <= 0){
             return;
@@ -118,6 +113,11 @@ public class FrmEditor extends javax.swing.JFrame {
         int index = tbpContent.getSelectedIndex();
         tbpContent.remove(index);
     }//GEN-LAST:event_btnCloseTabActionPerformed
+
+    private void mniNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniNewActionPerformed
+        PnlEditor pnlEditor = new PnlEditor();
+        tbpContent.addTab("Editor "+countTab++ , pnlEditor);
+    }//GEN-LAST:event_mniNewActionPerformed
 
     /**
      * @param args the command line arguments
